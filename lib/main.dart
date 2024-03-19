@@ -1,10 +1,19 @@
-import 'package:expense_tracker/apps/view/homescreen.dart';
+import 'package:expense_tracker/apps/controller/auth/bloc/bloc/auth_bloc.dart';
 import 'package:expense_tracker/apps/view/login.dart';
+import 'package:expense_tracker/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(create: (context) => AuthBloc(),),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
