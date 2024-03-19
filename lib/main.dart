@@ -1,7 +1,9 @@
-import 'package:expense_tracker/screens/home/views/homescreen.dart';
+import 'package:expense_tracker/apps/view/homescreen.dart';
+import 'package:expense_tracker/apps/view/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
             tertiary: Color.fromARGB(255, 220, 240, 4),
             outline: Colors.grey.shade400),
       ),
-      home: const HomeScreen(),
+      home: SignIn(),
     );
   }
 }

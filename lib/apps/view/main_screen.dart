@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:expense_tracker/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -216,7 +217,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 3,
+                itemCount: transactionData.length,
                 itemBuilder: (context, int i) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
@@ -236,14 +237,14 @@ class _MainScreenState extends State<MainScreen> {
                                   width: 50,
                                   height: 50,
                                   decoration: BoxDecoration(
-                                      color: Colors.yellow,
+                                      color: transactionData[i]['color'],
                                       shape: BoxShape.circle),
                                 ),
                                 SizedBox(
                                   width: 12,
                                 ),
                                 Text(
-                                  "Food",
+                                  transactionData[i]['name'],
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Theme.of(context)
@@ -255,9 +256,10 @@ class _MainScreenState extends State<MainScreen> {
                               ],
                             ),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  "-\$40.00",
+                                  transactionData[i]['totalamount'].toString(),
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Theme.of(context)
@@ -267,7 +269,7 @@ class _MainScreenState extends State<MainScreen> {
                                   ),
                                 ),
                                 Text(
-                                  "Food",
+                                  transactionData[i]['date'],
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Theme.of(context)
