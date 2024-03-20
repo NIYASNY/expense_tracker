@@ -1,4 +1,5 @@
 import 'package:expense_tracker/apps/controller/auth/bloc/bloc/auth_bloc.dart';
+import 'package:expense_tracker/apps/view/home/homescreen.dart';
 import 'package:expense_tracker/apps/view/login.dart';
 import 'package:expense_tracker/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -10,7 +11,9 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(MultiBlocProvider(
     providers: [
-      BlocProvider(create: (context) => AuthBloc(),),
+      BlocProvider(
+        create: (context) => AuthBloc(),
+      ),
     ],
     child: const MyApp(),
   ));
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
             tertiary: Color.fromARGB(255, 220, 240, 4),
             outline: Colors.grey.shade400),
       ),
-      home: SignIn(),
+      home: HomeScreen(),
     );
   }
 }

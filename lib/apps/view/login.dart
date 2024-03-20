@@ -1,5 +1,5 @@
 import 'package:expense_tracker/apps/controller/auth/bloc/bloc/auth_bloc.dart';
-import 'package:expense_tracker/apps/view/homescreen.dart';
+import 'package:expense_tracker/apps/view/home/homescreen.dart';
 import 'package:expense_tracker/apps/widgets/assetfolder.dart';
 import 'package:expense_tracker/apps/widgets/signinbutton.dart';
 import 'package:flutter/cupertino.dart';

@@ -66,9 +66,10 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
                 IconButton(
-                    alignment: Alignment.centerLeft,
-                    onPressed: () {},
-                    icon: const Icon(CupertinoIcons.settings))
+                  alignment: Alignment.centerLeft,
+                  onPressed: () {},
+                  icon: const Icon(CupertinoIcons.settings),
+                ),
               ],
             ),
             const SizedBox(
@@ -233,13 +234,20 @@ class _MainScreenState extends State<MainScreen> {
                           children: [
                             Row(
                               children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                      color: transactionData[i]['color'],
-                                      shape: BoxShape.circle),
+                                Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Container(
+                                      width: 50,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          color: transactionData[i]['color'],
+                                          shape: BoxShape.circle),
+                                    ),
+                                    transactionData[i]['icon'],
+                                  ],
                                 ),
+                                // transactionData[i]['icon'],
                                 SizedBox(
                                   width: 12,
                                 ),

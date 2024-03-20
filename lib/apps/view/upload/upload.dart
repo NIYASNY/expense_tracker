@@ -3,7 +3,7 @@
 import 'dart:io';
 import 'package:expense_tracker/apps/controller/auth/bloc/bloc/auth_bloc.dart';
 import 'package:expense_tracker/apps/view/awesomebutton.dart';
-import 'package:expense_tracker/apps/view/homescreen.dart';
+import 'package:expense_tracker/apps/view/home/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
