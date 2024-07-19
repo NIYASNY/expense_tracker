@@ -1,6 +1,5 @@
 import 'package:expense_tracker/apps/controller/auth/bloc/bloc/auth_bloc.dart';
 import 'package:expense_tracker/apps/view/home/homescreen.dart';
-import 'package:expense_tracker/apps/view/login.dart';
 import 'package:expense_tracker/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
